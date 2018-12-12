@@ -1,6 +1,6 @@
 
 Comparison of Mycorrhizal Intensity Metrics
---------
+=========
 
 Clara Qin
 
