@@ -13,7 +13,7 @@ Clara Qin
 I am particularly interested in comparing these two metrics.
 
 1. _%EM_ (or _%AM_) - the percent of forest basal area occupied by trees that are associated primarily with ectomycorrhizal (or arbuscular mycorhizal) fungi in a given site.
-2. Intensity of mycorrhizal infection - as quantified by methods of Ivan Aleksandrovich Selivanov and described by Akhmetzhanova _et al._
+2. Intensity of mycorrhizal infection - as quantified by methods of Ivan Aleksandrovich Selivanov and described by [Akhmetzhanova _et al._](http://esapubs.org/archive/ecol/E093/059/metadata.htm)
 
 _%EM_ is based on site-level tree characteristics and can therefore be collected relatively easily, whereas intensity of mycorrhizal infection is based on belowground root sampling and therefore requires additional sampling effort.
 
@@ -21,7 +21,7 @@ If _%EM_ and intensity of mycorrhizal infection have a close relationship, then 
 
 # Analysis
 
-Load mycorrhizal intensity datasets from Akhmetzhanova _et al._:
+Load mycorrhizal intensity datasets from [Akhmetzhanova _et al._](http://esapubs.org/archive/ecol/E093/059/metadata.htm):
 
 
 ```r
