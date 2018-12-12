@@ -1,11 +1,10 @@
 ---
-title: "Comparison of Mycorrhizal Intensity Metrics"
-author: "Clara Qin"
-date: "12/12/2018"
-output: 
-  html_document: 
-    keep_md: yes
----
+# Comparison of Mycorrhizal Intensity Metrics
+
+Clara Qin
+
+12/12/2018
+
 
 
 
@@ -44,30 +43,6 @@ Combine myco and site datasets:
 
 
 ```r
-library(tidyr)
-library(dplyr)
-```
-
-```
-## 
-## Attaching package: 'dplyr'
-```
-
-```
-## The following objects are masked from 'package:stats':
-## 
-##     filter, lag
-```
-
-```
-## The following objects are masked from 'package:base':
-## 
-##     intersect, setdiff, setequal, union
-```
-
-```r
-library(ggplot2)
-
 myco %>%
   left_join(sites, by=c("site.number"="site")) -> myco_sites
 ```
