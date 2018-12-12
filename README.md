@@ -1,10 +1,11 @@
 ---
-# Comparison of Mycorrhizal Intensity Metrics
-
-Clara Qin
-
-12/12/2018
-
+title: "Comparison of Mycorrhizal Intensity Metrics"
+author: "Clara Qin"
+date: "12/12/2018"
+output: 
+  html_document: 
+    keep_md: yes
+---
 
 
 
@@ -44,6 +45,7 @@ Combine myco and site datasets:
 
 ```r
 myco %>%
+  filter(mycorrhizal.type.modern=="Ectomycorrhiza ") %>%
   left_join(sites, by=c("site.number"="site")) -> myco_sites
 ```
 
@@ -58,7 +60,7 @@ myco_sites %>%
 ```
 
 ```
-## Warning: Removed 177 rows containing non-finite values (stat_boxplot).
+## Warning: Removed 13 rows containing non-finite values (stat_boxplot).
 ```
 
 ![](README_files/figure-html/unnamed-chunk-4-1.png)<!-- -->
