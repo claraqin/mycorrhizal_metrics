@@ -7,7 +7,6 @@ Clara Qin
 12/12/2018
 
 
-
 # Background
 
 I am particularly interested in comparing these two metrics.
@@ -45,14 +44,14 @@ Combine myco and site datasets:
 ```r
 myco %>%
   filter(mycorrhizal.type.modern=="Ectomycorrhiza ") %>%
-  left_join(sites, by=c("site.number"="site")) -> myco_sites
+  left_join(sites, by=c("site.number"="site")) -> em_sites
 ```
 
-Plot intensity of mycorrhizal infection vs. %EM:
+Plot intensity of ectomycorrhizal infection vs. %EM:
 
 
 ```r
-myco_sites %>%
+em_sites %>%
   filter(!is.na(percent.em.trees)) %>%
   ggplot(aes(x=percent.em.trees, y=intensity.of.mycorrhizal.infection, group=percent.em.trees)) +
   geom_boxplot()
@@ -65,6 +64,25 @@ myco_sites %>%
 ![](README_files/figure-html/unnamed-chunk-4-1.png)<!-- -->
 
 Doesn't look so good.
+
+No. of records per %EM level:
+
+
+```r
+em_sites %>%
+  group_by(percent.em.trees) %>%
+  summarise(n_records = n())
+```
+
+```
+## # A tibble: 4 x 2
+##   percent.em.trees n_records
+##              <dbl>     <int>
+## 1                0         7
+## 2               90         6
+## 3              100        92
+## 4               NA       541
+```
 
 Next steps: Account for mycorrhizal type of the plant from which roots were sampled.
 
