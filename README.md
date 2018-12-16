@@ -1,10 +1,12 @@
+---
+title: "Comparison of Mycorrhizal Intensity Metrics"
+author: "Clara Qin"
+date: "12/12/2018"
+output: 
+  html_document: 
+    keep_md: yes
+---
 
-Comparison of Mycorrhizal Intensity Metrics
-=========
-
-Clara Qin
-
-12/12/2018
 
 
 # Background
@@ -85,6 +87,39 @@ em_sites %>%
 ```
 
 Next steps: Account for mycorrhizal type of the plant from which roots were sampled.
+
+How many records for each host family x genus?
+
+
+```r
+em_sites %>%
+  filter(!is.na(percent.em.trees), !is.na(intensity.of.mycorrhizal.infection)) %>%
+  group_by(family, genus) %>%
+  summarise(n = n()) %>%
+  arrange(desc(n))
+```
+
+```
+## # A tibble: 13 x 3
+## # Groups:   family [5]
+##    family     genus        n
+##    <fct>      <fct>    <int>
+##  1 Betulaceae Betula      21
+##  2 Pinaceae   Pinus       17
+##  3 Salicaceae Populus     13
+##  4 Salicaceae Salix       12
+##  5 Pinaceae   Abies       11
+##  6 Pinaceae   Picea        5
+##  7 Malvaceae  Tilia        4
+##  8 Pinaceae   Larix        3
+##  9 Fagaceae   Castanea     2
+## 10 Betulaceae Carpinus     1
+## 11 Betulaceae Corylus      1
+## 12 Fagaceae   Fagus        1
+## 13 Fagaceae   Quercus      1
+```
+
+These are all strictly ectomycorrhizal plant genera, so we cannot differentiate between EM and non-EM trees based on this data.
 
 # Appendix
 
