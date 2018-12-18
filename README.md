@@ -1,12 +1,9 @@
----
-title: "Comparison of Mycorrhizal Intensity Metrics"
-author: "Clara Qin"
-date: "12/12/2018"
-output: 
-  html_document: 
-    keep_md: yes
----
+Comparison of Mycorrhizal Intensity Metrics"
+==========
 
+Clara Qin
+
+Updated 12/17/2018
 
 
 # Background
